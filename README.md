@@ -60,9 +60,8 @@ res.cookie("qid", token, {
 
 ### 3rd party cookies
 
+Sometimes the browser will eat your cookie if it thinks it's a 3rd party one. You can avoid this by using a custom domain and having your backend and frontend on different subdomains. For example, have the website on `www.codeponder.com` and the server on `api.codeponder.com`.
+
+### domain
 
 
-2. set proxy
-3. secure
-4. 3rd party cookies
-5. domain

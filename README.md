@@ -60,8 +60,22 @@ res.cookie("qid", token, {
 
 ### 3rd party cookies
 
-Sometimes the browser will eat your cookie if it thinks it's a 3rd party one. You can avoid this by using a custom domain and having your backend and frontend on different subdomains. For example, have the website on `www.codeponder.com` and the server on `api.codeponder.com`.
+Sometimes the browser will eat your cookie if it thinks it's a 3rd party one. You can avoid this by using a custom domain and having your backend and frontend on different subdomains. For example, have the website on `www.example.com` and the server on `api.example.com`.
 
 ### domain
 
+If you refresh your browser and the cookie disapears this fix is for you.
 
+You'll need a custom domain and when you create your cookie set that as the domain with a period in front:
+
+```js
+res.cookie("qid", token, {
+  path: "/",
+  httpOnly: true,
+  secure: false,
+  domain: '.example.com',
+  maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+});
+```
+
+Also make sure if your doing SSR that you forward the cookie header when you SSR requests.

@@ -66,7 +66,7 @@ Sometimes the browser will eat your cookie if it thinks it's a 3rd party one. Yo
 
 ### domain
 
-If you refresh your browser and the cookie disapears this fix is for you.
+If you refresh your browser and the cookie disappears this fix is for you.
 
 You'll need a custom domain and when you create your cookie set that as the domain with a period in front:
 
@@ -81,3 +81,4 @@ res.cookie("qid", token, {
 ```
 
 Also make sure if your doing SSR that you forward the cookie header when you SSR requests.
+
